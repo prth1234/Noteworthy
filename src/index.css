@@ -1,0 +1,287 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Noto design tokens — shadcn-compatible CSS variables.
+ * Default: Light Graphite (warm-neutral light, graphite accents).
+ * Every theme below only swaps tokens; components stay identical.
+ */
+@layer base {
+  :root,
+  [data-theme="light-graphite"] {
+    --background: 40 20% 97.5%;
+    --foreground: 30 6% 22%;
+    --card: 40 18% 99%;
+    --card-foreground: 30 6% 22%;
+    --popover: 40 25% 99%;
+    --popover-foreground: 30 6% 22%;
+    --primary: 220 8% 32%;
+    --primary-foreground: 40 20% 98%;
+    --secondary: 40 12% 91.5%;
+    --secondary-foreground: 30 6% 28%;
+    --muted: 38 14% 93%;
+    --muted-foreground: 30 5% 46%;
+    --accent: 38 16% 90%;
+    --accent-foreground: 30 6% 24%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 32 10% 86%;
+    --input: 32 10% 84%;
+    --ring: 220 8% 40%;
+    --radius: 0.5rem;
+    --sidebar: 42 15% 94.5%;
+    --editor: 40 20% 98.2%;
+    --code-bg: 35 12% 93.5%;
+  }
+  [data-theme="pure-light"] {
+    --background: 0 0% 100%; --foreground: 0 0% 12%;
+    --card: 0 0% 100%; --card-foreground: 0 0% 12%;
+    --popover: 0 0% 100%; --popover-foreground: 0 0% 12%;
+    --primary: 0 0% 15%; --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 95%; --secondary-foreground: 0 0% 15%;
+    --muted: 0 0% 96%; --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 94%; --accent-foreground: 0 0% 12%;
+    --destructive: 0 72% 51%; --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%; --input: 0 0% 88%; --ring: 0 0% 20%;
+    --radius: 0.5rem; --sidebar: 0 0% 97%; --editor: 0 0% 100%; --code-bg: 0 0% 95%;
+  }
+  [data-theme="dark-graphite"] {
+    --background: 0 0% 10%; --foreground: 0 0% 92%;
+    --card: 0 0% 12.5%; --card-foreground: 0 0% 92%;
+    --popover: 0 0% 13%; --popover-foreground: 0 0% 92%;
+    --primary: 0 0% 88%; --primary-foreground: 0 0% 12%;
+    --secondary: 0 0% 17%; --secondary-foreground: 0 0% 90%;
+    --muted: 0 0% 15%; --muted-foreground: 0 0% 62%;
+    --accent: 0 0% 18%; --accent-foreground: 0 0% 92%;
+    --destructive: 0 62% 55%; --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 21%; --input: 0 0% 22%; --ring: 0 0% 70%;
+    --radius: 0.5rem; --sidebar: 0 0% 8%; --editor: 0 0% 10.5%; --code-bg: 0 0% 14%;
+  }
+  [data-theme="pure-dark"] {
+    --background: 0 0% 0%; --foreground: 0 0% 95%;
+    --card: 0 0% 4%; --card-foreground: 0 0% 95%;
+    --popover: 0 0% 5%; --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 100%; --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%; --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 8%; --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 12%; --accent-foreground: 0 0% 95%;
+    --destructive: 0 62% 55%; --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 14%; --input: 0 0% 16%; --ring: 0 0% 80%;
+    --radius: 0.5rem; --sidebar: 0 0% 0%; --editor: 0 0% 2%; --code-bg: 0 0% 7%;
+  }
+  [data-theme="sepia"] {
+    --background: 38 44% 92%; --foreground: 28 30% 22%;
+    --card: 38 40% 94%; --card-foreground: 28 30% 22%;
+    --popover: 38 44% 95%; --popover-foreground: 28 30% 22%;
+    --primary: 26 40% 32%; --primary-foreground: 38 44% 96%;
+    --secondary: 36 30% 84%; --secondary-foreground: 28 30% 24%;
+    --muted: 36 28% 87%; --muted-foreground: 28 18% 42%;
+    --accent: 36 32% 82%; --accent-foreground: 28 30% 22%;
+    --destructive: 0 65% 48%; --destructive-foreground: 0 0% 100%;
+    --border: 34 22% 76%; --input: 34 22% 74%; --ring: 26 40% 36%;
+    --radius: 0.5rem; --sidebar: 37 38% 88%; --editor: 38 44% 93%; --code-bg: 36 30% 86%;
+  }
+  [data-theme="warm-paper"] {
+    --background: 46 40% 95%; --foreground: 30 12% 20%;
+    --card: 46 45% 97%; --card-foreground: 30 12% 20%;
+    --popover: 46 45% 98%; --popover-foreground: 30 12% 20%;
+    --primary: 24 55% 38%; --primary-foreground: 46 40% 98%;
+    --secondary: 44 30% 88%; --secondary-foreground: 30 12% 24%;
+    --muted: 44 28% 90%; --muted-foreground: 30 8% 44%;
+    --accent: 44 32% 86%; --accent-foreground: 30 12% 20%;
+    --destructive: 0 65% 48%; --destructive-foreground: 0 0% 100%;
+    --border: 40 20% 80%; --input: 40 20% 78%; --ring: 24 55% 40%;
+    --radius: 0.5rem; --sidebar: 44 34% 91%; --editor: 46 40% 96%; --code-bg: 43 28% 88%;
+  }
+  [data-theme="slate"] {
+    --background: 215 20% 96%; --foreground: 222 30% 18%;
+    --card: 215 22% 98%; --card-foreground: 222 30% 18%;
+    --popover: 215 22% 99%; --popover-foreground: 222 30% 18%;
+    --primary: 222 35% 30%; --primary-foreground: 215 20% 98%;
+    --secondary: 214 18% 90%; --secondary-foreground: 222 30% 22%;
+    --muted: 214 16% 92%; --muted-foreground: 220 12% 44%;
+    --accent: 214 18% 88%; --accent-foreground: 222 30% 18%;
+    --destructive: 0 72% 51%; --destructive-foreground: 0 0% 100%;
+    --border: 214 14% 84%; --input: 214 14% 82%; --ring: 222 35% 36%;
+    --radius: 0.5rem; --sidebar: 215 18% 93%; --editor: 215 20% 97%; --code-bg: 214 16% 91%;
+  }
+  [data-theme="midnight"] {
+    --background: 222 40% 9%; --foreground: 214 25% 92%;
+    --card: 222 38% 11.5%; --card-foreground: 214 25% 92%;
+    --popover: 222 38% 12%; --popover-foreground: 214 25% 92%;
+    --primary: 214 80% 72%; --primary-foreground: 222 40% 10%;
+    --secondary: 222 30% 16%; --secondary-foreground: 214 25% 90%;
+    --muted: 222 28% 14%; --muted-foreground: 215 15% 62%;
+    --accent: 222 30% 17%; --accent-foreground: 214 25% 92%;
+    --destructive: 0 62% 55%; --destructive-foreground: 0 0% 100%;
+    --border: 222 26% 20%; --input: 222 26% 21%; --ring: 214 80% 70%;
+    --radius: 0.5rem; --sidebar: 222 42% 7%; --editor: 222 40% 9.5%; --code-bg: 222 32% 13%;
+  }
+  [data-theme="nord"] {
+    --background: 220 16% 93%; --foreground: 220 20% 22%;
+    --card: 220 18% 95%; --card-foreground: 220 20% 22%;
+    --popover: 220 18% 96%; --popover-foreground: 220 20% 22%;
+    --primary: 210 40% 42%; --primary-foreground: 220 16% 97%;
+    --secondary: 220 14% 86%; --secondary-foreground: 220 20% 24%;
+    --muted: 220 14% 89%; --muted-foreground: 220 10% 44%;
+    --accent: 220 16% 84%; --accent-foreground: 220 20% 20%;
+    --destructive: 0 60% 52%; --destructive-foreground: 0 0% 100%;
+    --border: 220 12% 80%; --input: 220 12% 78%; --ring: 210 40% 45%;
+    --radius: 0.5rem; --sidebar: 220 16% 90%; --editor: 220 16% 94%; --code-bg: 220 14% 87%;
+  }
+  [data-theme="nord-dark"] {
+    --background: 220 25% 17%; --foreground: 218 25% 88%;
+    --card: 220 24% 19%; --card-foreground: 218 25% 88%;
+    --popover: 220 24% 20%; --popover-foreground: 218 25% 88%;
+    --primary: 193 43% 67%; --primary-foreground: 220 25% 14%;
+    --secondary: 220 22% 24%; --secondary-foreground: 218 25% 88%;
+    --muted: 220 22% 22%; --muted-foreground: 218 12% 62%;
+    --accent: 220 22% 25%; --accent-foreground: 218 25% 88%;
+    --destructive: 0 60% 58%; --destructive-foreground: 0 0% 100%;
+    --border: 220 20% 28%; --input: 220 20% 29%; --ring: 193 43% 65%;
+    --radius: 0.5rem; --sidebar: 220 26% 15%; --editor: 220 25% 17.5%; --code-bg: 220 22% 21%;
+  }
+  [data-theme="solarized-light"] {
+    --background: 44 42% 93%; --foreground: 196 40% 24%;
+    --card: 44 45% 95%; --card-foreground: 196 40% 24%;
+    --popover: 44 45% 96%; --popover-foreground: 196 40% 24%;
+    --primary: 196 60% 32%; --primary-foreground: 44 42% 97%;
+    --secondary: 44 28% 85%; --secondary-foreground: 196 40% 26%;
+    --muted: 44 26% 88%; --muted-foreground: 196 18% 44%;
+    --accent: 44 30% 83%; --accent-foreground: 196 40% 22%;
+    --destructive: 0 60% 50%; --destructive-foreground: 0 0% 100%;
+    --border: 44 20% 78%; --input: 44 20% 76%; --ring: 196 60% 35%;
+    --radius: 0.5rem; --sidebar: 44 36% 89%; --editor: 44 42% 94%; --code-bg: 44 26% 86%;
+  }
+  [data-theme="solarized-dark"] {
+    --background: 192 60% 10%; --foreground: 44 25% 85%;
+    --card: 192 55% 12%; --card-foreground: 44 25% 85%;
+    --popover: 192 55% 13%; --popover-foreground: 44 25% 85%;
+    --primary: 44 60% 65%; --primary-foreground: 192 60% 10%;
+    --secondary: 192 40% 17%; --secondary-foreground: 44 25% 85%;
+    --muted: 192 38% 15%; --muted-foreground: 44 14% 60%;
+    --accent: 192 40% 18%; --accent-foreground: 44 25% 85%;
+    --destructive: 0 60% 58%; --destructive-foreground: 0 0% 100%;
+    --border: 192 32% 22%; --input: 192 32% 23%; --ring: 44 60% 63%;
+    --radius: 0.5rem; --sidebar: 192 62% 8%; --editor: 192 60% 10.5%; --code-bg: 192 42% 14%;
+  }
+  [data-theme="forest"] {
+    --background: 120 18% 94%; --foreground: 140 25% 18%;
+    --card: 120 20% 96%; --card-foreground: 140 25% 18%;
+    --popover: 120 20% 97%; --popover-foreground: 140 25% 18%;
+    --primary: 145 45% 28%; --primary-foreground: 120 18% 97%;
+    --secondary: 120 14% 87%; --secondary-foreground: 140 25% 20%;
+    --muted: 120 14% 89%; --muted-foreground: 140 10% 42%;
+    --accent: 120 16% 85%; --accent-foreground: 140 25% 16%;
+    --destructive: 0 65% 48%; --destructive-foreground: 0 0% 100%;
+    --border: 125 12% 80%; --input: 125 12% 78%; --ring: 145 45% 30%;
+    --radius: 0.5rem; --sidebar: 120 16% 90%; --editor: 120 18% 95%; --code-bg: 120 14% 88%;
+  }
+  [data-theme="ocean"] {
+    --background: 200 35% 94%; --foreground: 205 40% 18%;
+    --card: 200 38% 96%; --card-foreground: 205 40% 18%;
+    --popover: 200 38% 97%; --popover-foreground: 205 40% 18%;
+    --primary: 200 70% 32%; --primary-foreground: 200 35% 98%;
+    --secondary: 200 25% 87%; --secondary-foreground: 205 40% 20%;
+    --muted: 200 24% 89%; --muted-foreground: 205 18% 42%;
+    --accent: 200 28% 85%; --accent-foreground: 205 40% 16%;
+    --destructive: 0 65% 48%; --destructive-foreground: 0 0% 100%;
+    --border: 200 20% 80%; --input: 200 20% 78%; --ring: 200 70% 34%;
+    --radius: 0.5rem; --sidebar: 200 30% 90%; --editor: 200 35% 95%; --code-bg: 200 24% 88%;
+  }
+  [data-theme="rose"] {
+    --background: 350 40% 96%; --foreground: 345 30% 20%;
+    --card: 350 42% 98%; --card-foreground: 345 30% 20%;
+    --popover: 350 42% 99%; --popover-foreground: 345 30% 20%;
+    --primary: 345 55% 42%; --primary-foreground: 350 40% 99%;
+    --secondary: 350 28% 90%; --secondary-foreground: 345 30% 22%;
+    --muted: 350 26% 92%; --muted-foreground: 345 12% 46%;
+    --accent: 350 30% 88%; --accent-foreground: 345 30% 18%;
+    --destructive: 0 70% 50%; --destructive-foreground: 0 0% 100%;
+    --border: 350 20% 85%; --input: 350 20% 83%; --ring: 345 55% 44%;
+    --radius: 0.5rem; --sidebar: 350 34% 93%; --editor: 350 40% 97%; --code-bg: 350 26% 90%;
+  }
+  [data-theme="monochrome"] {
+    --background: 0 0% 93%; --foreground: 0 0% 14%;
+    --card: 0 0% 96%; --card-foreground: 0 0% 14%;
+    --popover: 0 0% 97%; --popover-foreground: 0 0% 14%;
+    --primary: 0 0% 18%; --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 87%; --secondary-foreground: 0 0% 16%;
+    --muted: 0 0% 89%; --muted-foreground: 0 0% 42%;
+    --accent: 0 0% 85%; --accent-foreground: 0 0% 12%;
+    --destructive: 0 0% 30%; --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 80%; --input: 0 0% 78%; --ring: 0 0% 20%;
+    --radius: 0.5rem; --sidebar: 0 0% 90%; --editor: 0 0% 94%; --code-bg: 0 0% 87%;
+  }
+
+  * { @apply border-border; }
+  html, body, #root { height: 100%; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif;
+    font-feature-settings: "cv11", "ss01";
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: hsl(var(--primary) / 0.18); }
+  *::-webkit-scrollbar { width: 10px; height: 10px; }
+  *::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 8px; border: 2px solid transparent; background-clip: content-box; }
+  *::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground) / 0.5); border: 2px solid transparent; background-clip: content-box; }
+  *::-webkit-scrollbar-track { background: transparent; }
+}
+
+@layer components {
+  .app-sidebar { background: hsl(var(--sidebar)); }
+  .app-editor { background: hsl(var(--editor)); }
+  .code-surface { background: hsl(var(--code-bg)); }
+  .editor-block { @apply rounded-md px-3 py-1.5 outline-none transition-colors; }
+  .editor-block:hover { background: hsl(var(--accent) / 0.35); }
+  .editor-block[data-active="true"] { background: hsl(var(--accent) / 0.55); }
+  .slash-menu { @apply rounded-lg border bg-popover p-1.5 shadow-xl; width: 340px; }
+
+  /*
+   * Transform-safe enter animations. Radix centers dialogs with
+   * translate(-50%,-50%) and positions menus with translate3d — the stock
+   * tailwindcss-animate `animate-in` keyframes override `transform`, which
+   * made panels flash at a wrong offset then snap (the "slide from right").
+   * These keyframes only animate opacity (menus) or replay the exact centering
+   * transform (dialog), so panels appear directly in their final position.
+   */
+  @keyframes dialog-enter {
+    from { opacity: 0; transform: translate(-50%, -50%) scale(0.97); }
+    to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  }
+  @keyframes fade-only {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .dialog-enter { animation: dialog-enter 170ms cubic-bezier(0.16, 1, 0.3, 1); }
+  .pop-fade { animation: fade-only 130ms ease-out; }
+  /* Tab strip scrolls horizontally (trackpad/wheel) with no visible bar,
+   * so the bar never grows a scrollbar row as tabs overflow. */
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  /*
+   * Titlebar dragging (Tauri data-tauri-drag-region + WebKit app regions).
+   * The tab strip is a scroll container, which breaks drag inheritance from
+   * the header — so fillers carry the attribute explicitly, while tabs and
+   * buttons opt OUT: they stay fully clickable and never start a window move.
+   */
+  #titlebar button,
+  #titlebar [role="tab"] {
+    -webkit-app-region: no-drag;
+  }
+  /* Dialogs: opacity-only enter. Any transform/scale keyframe risks replaying
+   * over Radix positioning and flashing the panel off-center first. */
+  .fade-enter { animation: fade-only 140ms ease-out; }
+  /*
+   * Top-anchored palette (⌘K). The palette sits at ~20% viewport height, so
+   * it gets its own rise-in that preserves the top-anchored transform —
+   * reusing dialog-enter here would flash it at true-center then snap.
+   */
+  @keyframes palette-enter {
+    from { opacity: 0; transform: translate(-50%, -10px) scale(0.98); }
+    to { opacity: 1; transform: translate(-50%, 0) scale(1); }
+  }
+  .palette-enter { animation: palette-enter 160ms cubic-bezier(0.16, 1, 0.3, 1); }
+}

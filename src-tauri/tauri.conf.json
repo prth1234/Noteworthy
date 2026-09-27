@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Noteworthy",
+  "version": "0.1.0",
+  "identifier": "com.noto.notes",
+  "build": {
+    "devUrl": "http://localhost:1420",
+    "frontendDist": "../dist",
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Noteworthy",
+        "width": 1280,
+        "height": 800,
+        "minWidth": 900,
+        "minHeight": 600,
+        "decorations": true,
+        "titleBarStyle": "Overlay",
+        "hiddenTitle": true,
+        "transparent": false
+      }
+    ],
+    "security": { "csp": null },
+    "macOSPrivateApi": true
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["dmg", "app"],
+    "category": "Productivity",
+    "shortDescription": "Lightweight local-first Markdown notes",
+    "longDescription": "Noteworthy — Markdown underneath, beautiful blocks on top. Local SQLite, offline-first, keyboard-first.",
+    "macOS": {
+      "minimumSystemVersion": "11.0",
+      "signingIdentity": null
+    },
+    "icon": ["icons/128x128.png", "icons/128x128@2x.png", "icons/icon.icns", "icons/icon.ico"]
+  },
+  "plugins": {
+    "sql": { "preload": ["sqlite:noto.db"] }
+  }
+}
