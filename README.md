@@ -18,6 +18,11 @@ Custom components (everything else is shadcn/ui): `CodeBlock` (language tag, cop
   <img src="docs/assets/architecture.svg" alt="React frontend and Tauri Rust shell architecture" width="100%" />
 </div>
 
+<details>
+<summary><b>Source tree &amp; module breakdown</b></summary>
+
+<br/>
+
 ```
 macOS .app (Tauri 2)
 ├── React + TypeScript + Tailwind + shadcn/ui   (src/)
@@ -29,6 +34,8 @@ macOS .app (Tauri 2)
 └── Rust shell (src-tauri/) — SQLite + FTS5, filesystem, macOS APIs
 ```
 
+</details>
+
 ## Run locally
 
 ```bash
@@ -36,12 +43,15 @@ npm install
 npm run dev        # web preview of the exact desktop UI
 ```
 
-## macOS app (Tauri)
+<details>
+<summary><b>macOS universal app build (Tauri + Rust)</b></summary>
+
+<br/>
 
 Requires Rust (Apple Silicon and Intel supported via universal build):
 
 ```bash
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tl-2.2 -sSf https://sh.rustup.rs | sh
 rustup target add aarch64-apple-darwin x86_64-apple-darwin
 npm run tauri:dev    # dev .app
 npm run tauri:build  # Noto.app / Noto.dmg (universal)
@@ -49,7 +59,12 @@ npm run tauri:build  # Noto.app / Noto.dmg (universal)
 
 Install the same `.app` or `.dmg` on every Mac — one build, all machines.
 
-## Sync roadmap (Phase 6)
+</details>
+
+<details>
+<summary><b>Sync roadmap (Phase 6)</b></summary>
+
+<br/>
 
 Goal: same build on all Macs, one centralized note library, local-first.
 
@@ -58,3 +73,5 @@ Goal: same build on all Macs, one centralized note library, local-first.
 - Sync layer: `Local SQLite -> Sync Layer -> Central DB -> other Macs`.
 - Offline edits queue in `outbox`, flush on reconnect (last-writer-wins per field with tombstones; conflicts surface side-by-side in the editor for manual merge).
 - Notes stay Markdown-portable throughout; sync transports Markdown plus metadata.
+
+</details>

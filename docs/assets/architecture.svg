@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 250" width="900" height="250">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 256" width="900" height="256" role="img" aria-label="Noteworthy React and Tauri Rust Architecture">
   <style>
   text { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif; }
   .mono { font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace; }
@@ -6,58 +6,104 @@
   .mut { fill: #9E9E9E; }
   .acc { fill: #D4A373; }
   .bd { fill: none; stroke: #363636; stroke-width: 1.2; }
-  .bd-acc { fill: none; stroke: #D4A373; stroke-width: 1.2; }
-  .dash { fill: none; stroke: #525252; stroke-width: 1.2; stroke-dasharray: 4 4; }
-  .icon { fill: none; stroke: #D4A373; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-  .caret { fill: #D4A373; animation: blink 1.2s step-end infinite; }
-  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  .dash { fill: none; stroke: #D4A373; stroke-width: 1.4; stroke-dasharray: 4 4; animation: nw-march 1.2s linear infinite; }
+  .dash-up { fill: none; stroke: #525252; stroke-width: 1.4; stroke-dasharray: 4 4; animation: nw-march-up 1.2s linear infinite; }
+  .sig-dot { fill: #D4A373; }
+
+  @keyframes nw-march { to { stroke-dashoffset: -16; } }
+  @keyframes nw-march-up { to { stroke-dashoffset: 16; } }
+
+  /* Synchronized stage pulses over 6s cycle */
+  .nw-top { animation: nw-stage-top 6s ease-in-out infinite; }
+  .nw-bot { animation: nw-stage-bot 6s ease-in-out infinite; }
+  .nw-sub1 { animation: nw-sub 6s ease-in-out infinite 0s; }
+  .nw-sub2 { animation: nw-sub 6s ease-in-out infinite 0.5s; }
+  .nw-sub3 { animation: nw-sub 6s ease-in-out infinite 3.0s; }
+  .nw-sub4 { animation: nw-sub 6s ease-in-out infinite 3.5s; }
+
+  @keyframes nw-stage-top {
+    0%, 35% { stroke: #D4A373; stroke-width: 1.6; }
+    45%, 100% { stroke: #363636; stroke-width: 1.2; }
+  }
+  @keyframes nw-stage-bot {
+    0%, 45% { stroke: #363636; stroke-width: 1.2; }
+    52%, 88% { stroke: #D4A373; stroke-width: 1.6; }
+    95%, 100% { stroke: #363636; stroke-width: 1.2; }
+  }
+  @keyframes nw-sub {
+    0%, 28% { stroke: #D4A373; stroke-width: 1.5; }
+    35%, 100% { stroke: #363636; stroke-width: 1.2; }
+  }
+
   @media (prefers-color-scheme: light) {
     .fg { fill: #3B3834; }
     .mut { fill: #7A756E; }
     .acc { fill: #965A2B; }
     .bd { stroke: #DEDAD3; }
-    .bd-acc { stroke: #965A2B; }
-    .dash { stroke: #B8B2A8; }
-    .icon { stroke: #965A2B; }
-    .caret { fill: #965A2B; }
+    .dash { stroke: #965A2B; }
+    .dash-up { stroke: #B8B2A8; }
+    .sig-dot { fill: #965A2B; }
+    @keyframes nw-stage-top {
+      0%, 35% { stroke: #965A2B; stroke-width: 1.6; }
+      45%, 100% { stroke: #DEDAD3; stroke-width: 1.2; }
+    }
+    @keyframes nw-stage-bot {
+      0%, 45% { stroke: #DEDAD3; stroke-width: 1.2; }
+      52%, 88% { stroke: #965A2B; stroke-width: 1.6; }
+      95%, 100% { stroke: #DEDAD3; stroke-width: 1.2; }
+    }
+    @keyframes nw-sub {
+      0%, 28% { stroke: #965A2B; stroke-width: 1.5; }
+      35%, 100% { stroke: #DEDAD3; stroke-width: 1.2; }
+    }
   }
   @media (prefers-reduced-motion: reduce) {
-    .caret { animation: none; }
+    .dash, .dash-up, .nw-top, .nw-bot, .nw-sub1, .nw-sub2, .nw-sub3, .nw-sub4 { animation: none !important; }
+    .sig-dot { display: none; }
   }
-</style>
+  </style>
+
   <!-- Top layer: React UI -->
-  <rect x="20" y="12" width="860" height="96" rx="8" class="bd"/>
+  <rect x="20" y="12" width="860" height="96" rx="8" class="bd nw-top"/>
   <text x="40" y="38" font-size="16" font-weight="600" class="fg">React + TypeScript + Tailwind</text>
   <text x="860" y="38" text-anchor="end" font-size="12.5" class="mono mut">src/</text>
 
-  <rect x="40" y="54" width="185" height="38" rx="6" class="bd"/>
+  <rect x="40" y="54" width="185" height="38" rx="6" class="bd nw-sub1"/>
   <text x="132" y="77" text-anchor="middle" font-size="13" class="fg">Sidebar &amp; Tabs</text>
 
-  <rect x="245" y="54" width="205" height="38" rx="6" class="bd-acc"/>
+  <rect x="245" y="54" width="205" height="38" rx="6" class="bd nw-sub2"/>
   <text x="347" y="77" text-anchor="middle" font-size="13" class="acc">Block Editor (/ + MD)</text>
 
-  <rect x="470" y="54" width="185" height="38" rx="6" class="bd"/>
+  <rect x="470" y="54" width="185" height="38" rx="6" class="bd nw-sub1"/>
   <text x="562" y="77" text-anchor="middle" font-size="13" class="fg">Cmd+K Search</text>
 
-  <rect x="675" y="54" width="185" height="38" rx="6" class="bd"/>
+  <rect x="675" y="54" width="185" height="38" rx="6" class="bd nw-sub2"/>
   <text x="767" y="77" text-anchor="middle" font-size="13" class="fg">lib/blocks &amp; store</text>
 
   <!-- Connector -->
-  <line x1="250" y1="108" x2="250" y2="144" class="dash"/>
-  <line x1="650" y1="108" x2="650" y2="144" class="dash"/>
-  <text x="450" y="131" text-anchor="middle" font-size="12.5" class="mono mut">Tauri IPC &amp; Markdown serialization</text>
+  <line x1="250" y1="108" x2="250" y2="148" class="dash"/>
+  <line x1="650" y1="108" x2="650" y2="148" class="dash-up"/>
+  <text x="450" y="133" text-anchor="middle" font-size="12.5" class="mono mut">Tauri IPC &amp; Markdown serialization</text>
+
+  <!-- Travelling signal dots -->
+  <circle r="3.5" class="sig-dot">
+    <animateMotion dur="6s" repeatCount="indefinite" path="M 250 108 L 250 148"/>
+  </circle>
+  <circle r="3.5" class="sig-dot">
+    <animateMotion dur="6s" repeatCount="indefinite" begin="3s" path="M 650 148 L 650 108"/>
+  </circle>
 
   <!-- Bottom layer: Rust Shell -->
-  <rect x="20" y="144" width="860" height="92" rx="8" class="bd"/>
-  <text x="40" y="170" font-size="16" font-weight="600" class="fg">Rust Native Shell (Tauri 2)</text>
-  <text x="860" y="170" text-anchor="end" font-size="12.5" class="mono mut">src-tauri/</text>
+  <rect x="20" y="148" width="860" height="94" rx="8" class="bd nw-bot"/>
+  <text x="40" y="174" font-size="16" font-weight="600" class="fg">Rust Native Shell (Tauri 2)</text>
+  <text x="860" y="174" text-anchor="end" font-size="12.5" class="mono mut">src-tauri/</text>
 
-  <rect x="40" y="184" width="255" height="36" rx="6" class="bd"/>
-  <text x="167" y="206" text-anchor="middle" font-size="13" class="fg">SQLite + FTS5 Full-Text Index</text>
+  <rect x="40" y="188" width="255" height="36" rx="6" class="bd nw-sub3"/>
+  <text x="167" y="210" text-anchor="middle" font-size="13" class="fg">SQLite + FTS5 Full-Text Index</text>
 
-  <rect x="322" y="184" width="255" height="36" rx="6" class="bd"/>
-  <text x="449" y="206" text-anchor="middle" font-size="13" class="fg">Local Filesystem Storage</text>
+  <rect x="322" y="188" width="255" height="36" rx="6" class="bd nw-sub4"/>
+  <text x="449" y="210" text-anchor="middle" font-size="13" class="fg">Local Filesystem Storage</text>
 
-  <rect x="604" y="184" width="256" height="36" rx="6" class="bd"/>
-  <text x="732" y="206" text-anchor="middle" font-size="13" class="fg">Universal macOS (.app / .dmg)</text>
+  <rect x="604" y="188" width="256" height="36" rx="6" class="bd nw-sub3"/>
+  <text x="732" y="210" text-anchor="middle" font-size="13" class="fg">Universal macOS (.app / .dmg)</text>
 </svg>
