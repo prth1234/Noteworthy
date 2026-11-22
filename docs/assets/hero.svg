@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200">
+  <style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif; }
+  .mono { font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace; }
+  .fg { fill: #EBEBEB; }
+  .mut { fill: #9E9E9E; }
+  .acc { fill: #D4A373; }
+  .bd { fill: none; stroke: #363636; stroke-width: 1.2; }
+  .bd-acc { fill: none; stroke: #D4A373; stroke-width: 1.2; }
+  .dash { fill: none; stroke: #525252; stroke-width: 1.2; stroke-dasharray: 4 4; }
+  .icon { fill: none; stroke: #D4A373; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .caret { fill: #D4A373; animation: blink 1.2s step-end infinite; }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  @media (prefers-color-scheme: light) {
+    .fg { fill: #3B3834; }
+    .mut { fill: #7A756E; }
+    .acc { fill: #965A2B; }
+    .bd { stroke: #DEDAD3; }
+    .bd-acc { stroke: #965A2B; }
+    .dash { stroke: #B8B2A8; }
+    .icon { stroke: #965A2B; }
+    .caret { fill: #965A2B; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .caret { animation: none; }
+  }
+</style>
+  <text x="450" y="68" text-anchor="middle" font-size="48" font-weight="700" letter-spacing="-1.2" class="fg">Noteworthy<tspan class="caret">_</tspan></text>
+  <text x="450" y="106" text-anchor="middle" font-size="17" font-weight="400" class="mut">Local-first Markdown notes for macOS. Markdown underneath, blocks on top.</text>
+  <g transform="translate(0, 134)">
+    <rect x="135" y="0" width="110" height="30" rx="8" class="bd"/>
+    <text x="190" y="19" text-anchor="middle" font-size="13" font-weight="500" class="fg">Tauri 2</text>
+    <rect x="260" y="0" width="130" height="30" rx="8" class="bd"/>
+    <text x="325" y="19" text-anchor="middle" font-size="13" font-weight="500" class="fg">React + shadcn</text>
+    <rect x="405" y="0" width="135" height="30" rx="8" class="bd"/>
+    <text x="472" y="19" text-anchor="middle" font-size="13" font-weight="500" class="fg">SQLite + FTS5</text>
+    <rect x="555" y="0" width="110" height="30" rx="8" class="bd"/>
+    <text x="610" y="19" text-anchor="middle" font-size="13" font-weight="500" class="fg">16 Themes</text>
+    <rect x="680" y="0" width="95" height="30" rx="8" class="bd-acc"/>
+    <text x="727" y="19" text-anchor="middle" font-size="13" font-weight="500" class="acc">Offline</text>
+  </g>
+</svg>
