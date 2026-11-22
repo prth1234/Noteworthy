@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 170" width="900" height="170">
+  <style>
+  text { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", system-ui, sans-serif; }
+  .mono { font-family: ui-monospace, "SF Mono", SFMono-Regular, Menlo, monospace; }
+  .fg { fill: #EBEBEB; }
+  .mut { fill: #9E9E9E; }
+  .acc { fill: #D4A373; }
+  .bd { fill: none; stroke: #363636; stroke-width: 1.2; }
+  .bd-acc { fill: none; stroke: #D4A373; stroke-width: 1.2; }
+  .dash { fill: none; stroke: #525252; stroke-width: 1.2; stroke-dasharray: 4 4; }
+  .icon { fill: none; stroke: #D4A373; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+  .caret { fill: #D4A373; animation: blink 1.2s step-end infinite; }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  @media (prefers-color-scheme: light) {
+    .fg { fill: #3B3834; }
+    .mut { fill: #7A756E; }
+    .acc { fill: #965A2B; }
+    .bd { stroke: #DEDAD3; }
+    .bd-acc { stroke: #965A2B; }
+    .dash { stroke: #B8B2A8; }
+    .icon { stroke: #965A2B; }
+    .caret { fill: #965A2B; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .caret { animation: none; }
+  }
+</style>
+  <!-- Card 1 -->
+  <rect x="10" y="12" width="208" height="146" rx="8" class="bd"/>
+  <path d="M36 42l-7 7 7 7M48 42l7 7-7 7" class="icon"/>
+  <text x="30" y="88" font-size="16" font-weight="600" class="fg">CodeBlock</text>
+  <text x="30" y="112" font-size="12.5" class="mut">Language tag, line numbers</text>
+  <text x="30" y="132" font-size="12.5" class="mut">and one-click copy.</text>
+
+  <!-- Card 2 -->
+  <rect x="234" y="12" width="208" height="146" rx="8" class="bd"/>
+  <rect x="254" y="38" width="22" height="18" rx="3" class="icon"/>
+  <line x1="254" y1="47" x2="276" y2="47" class="icon"/>
+  <line x1="265" y1="38" x2="265" y2="56" class="icon"/>
+  <text x="254" y="88" font-size="16" font-weight="600" class="fg">TableBlock</text>
+  <text x="254" y="112" font-size="12.5" class="mut">Spreadsheet-style editing</text>
+  <text x="254" y="132" font-size="12.5" class="mut">saved as Markdown tables.</text>
+
+  <!-- Card 3 -->
+  <rect x="458" y="12" width="208" height="146" rx="8" class="bd"/>
+  <line x1="482" y1="56" x2="492" y2="36" class="icon"/>
+  <text x="478" y="88" font-size="16" font-weight="600" class="fg">Slash Commands</text>
+  <text x="478" y="112" font-size="12.5" class="mut">Type / for headings, lists,</text>
+  <text x="478" y="132" font-size="12.5" class="mut">callouts and gutter controls.</text>
+
+  <!-- Card 4 -->
+  <rect x="682" y="12" width="208" height="146" rx="8" class="bd"/>
+  <circle cx="712" cy="47" r="9" class="icon"/>
+  <circle cx="712" cy="47" r="3" class="icon"/>
+  <text x="702" y="88" font-size="16" font-weight="600" class="fg">16 Themes, 31 Fonts</text>
+  <text x="702" y="112" font-size="12.5" class="mut">Light Graphite default,</text>
+  <text x="702" y="132" font-size="12.5" class="mut">Sepia, Nord, Midnight.</text>
+</svg>
